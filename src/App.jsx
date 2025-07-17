@@ -37,24 +37,43 @@ function App() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>Random Joke</h1>
-      <p><strong>{joke.setup}</strong></p>
-      <p>{joke.punchline}</p>
+    <>
+      <div className="header">My Joke App</div>
+      <div className="main-content">
+        <div style={{ textAlign: "center", marginTop: "50px" }}>
+          <h1>Random Joke</h1>
+          <p><strong>{joke.setup}</strong></p>
+          <p>{joke.punchline}</p>
 
-      {/* 👇 Here's the button you asked about */}
-      <button
-        onClick={fetchJoke}
-        style={{
-          marginTop: "20px",
-          padding: "10px 20px",
-          fontSize: "16px",
-          cursor: "pointer",
-        }}
-      >
-        Get Another Joke
-      </button>
-    </div>
+          <button
+            onClick={fetchJoke}
+            style={{
+              marginTop: "20px",
+              padding: "10px 20px",
+              fontSize: "16px",
+              cursor: "pointer",
+            }}
+          >
+            Get Another Joke
+          </button>
+        </div>
+      </div>
+      <footer style={{
+        width: '100%',
+        textAlign: 'center',
+        padding: '24px 0 16px 0',
+        fontSize: '1.1em',
+        color: '#444',
+        letterSpacing: '1px',
+        position: 'fixed',
+        left: 0,
+        bottom: 0,
+        background: 'rgba(255,255,255,0.7)',
+        zIndex: 999
+      }}>
+        Developed and maintained by Gaurav Kumar
+      </footer>
+    </>
   );
 }
 
